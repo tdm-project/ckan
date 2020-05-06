@@ -1,4 +1,6 @@
-all: build
+SHELL := /bin/bash
+
+IMG ?= tdmproject/ckan-core
 
 clone:
 	git clone https://github.com/ckan/ckan.git && \
@@ -8,7 +10,7 @@ clone:
 
 ckan: clone 
 
-build: ckan
+images: ckan
 	cp patches/ckan-entrypoint.sh ckan/contrib/docker/
 	cd ckan && docker build -t tdmproject/ckan:v2.8.4 .
 

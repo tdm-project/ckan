@@ -7,6 +7,10 @@ cache: pip
 services:
   - docker
 
+env:
+  global:
+    - IMG=tdmproject/ckan-core
+
 script:
   - make images
 

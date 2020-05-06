@@ -12,5 +12,5 @@ ckan: clone
 
 images: ckan
 	cp patches/ckan-entrypoint.sh ckan/contrib/docker/
-	cd ckan && docker build -t tdmproject/ckan:v2.8.4 .
+	cd ckan && docker build -t ${IMG} .
 

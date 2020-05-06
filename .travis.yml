@@ -1,0 +1,18 @@
+language: python
+python:
+  - "2.7"
+
+cache: pip
+
+services:
+  - docker
+
+script:
+  - make
+
+deploy:
+  - provider: script
+    script: bash .travis/push.sh
+    on:
+      repo: tdm-project/ckan
+      branch: v2.8
